@@ -26,7 +26,7 @@ provider "kubernetes" {
       "eks",
       "get-token",
       "--cluster-name",
-      module.eks_cluster.cluster_name
+      module.eks_cluster.cluster_id
     ]
   }
 }
