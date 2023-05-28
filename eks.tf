@@ -16,6 +16,12 @@ module "eks_cluster" {
     }
   ]
 }
+
 output "cluster_name" {
-  value = aws_eks_cluster.cluster.name
+  value = module.eks_cluster.cluster_name
+}
+
+resource "aws_eks_cluster" "cluster" {
+  name     = module.eks_cluster.cluster_name
+  role_arn = module.eks_cluster.cluster_role_arn
 }
