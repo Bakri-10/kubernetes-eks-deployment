@@ -15,11 +15,11 @@ resource "helm_release" "external_dns" {
   }
 }
 
-resource "helm_release" "nginx_ingress" {
-  name       = "nginx-ingress"
-  repository = "https://charts.bitnami.com/bitnami"
+resource "helm_release" "nginx" {
+  name       = "nginx-release"
+  repository = "https://helm.nginx.com/stable"
   chart      = "nginx-ingress"
-  version    = "0.17.1"
+  version    = "0.16.1"
 
   set {
     name  = "controller.service.type"
