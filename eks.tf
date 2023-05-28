@@ -17,3 +17,16 @@ module "eks_cluster" {
   ]
 }
 
+resource "null_resource" "generate_kubeconfig" {
+  triggers = {
+    eks_cluster_id = module.eks_cluster.cluster_id
+  }
+
+  provisioner "local-exec" {
+    command = "aws eks update-kubeconfig --name ${module.eks_cluster.cluster_id} --kubeconfig kubeconfig.yaml --region ${var.region}"
+  }
+}
+
+output "kubeconfig_path" {
+  value = null_resource.generate_kubeconfig.triggers["eks_cluster_id"] != "" ? "./kubeconfig.yaml" : null
+}
