@@ -13,6 +13,8 @@ resource "helm_release" "external_dns" {
     name  = "aws.region"
     value = "us-west-2"
   }
+
+  debug = true  # Enable debug mode for the Helm release
 }
 
 resource "helm_release" "nginx" {
@@ -25,4 +27,6 @@ resource "helm_release" "nginx" {
     name  = "controller.service.type"
     value = "LoadBalancer"
   }
+
+  debug = true  # Enable debug mode for the Helm release
 }
