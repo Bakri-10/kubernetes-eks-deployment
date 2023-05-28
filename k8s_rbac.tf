@@ -11,7 +11,7 @@ resource "kubernetes_cluster_role_binding" "admin_binding" {
 
   subject {
     kind      = "User"  # Change to "Group" if using a group
-    name      = "YOUR_IDENTITY"  # Replace with  identity,( IAM user or role ARN)
+    name      = "YOUR_IDENTITY"  # Replace with identity (IAM user or role ARN)
     api_group = "rbac.authorization.k8s.io"
   }
 }
