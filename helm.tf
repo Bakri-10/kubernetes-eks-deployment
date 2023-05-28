@@ -2,7 +2,7 @@ resource "helm_release" "external_dns" {
   name       = "external-dns"
   repository = "https://charts.bitnami.com/bitnami"
   chart      = "external-dns"
-  version    = "0.13.4"
+  version    = "6.20.3"
 
   set {
     name  = "provider"
@@ -19,7 +19,7 @@ resource "helm_release" "nginx_ingress" {
   name       = "nginx-ingress"
   repository = "https://charts.bitnami.com/bitnami"
   chart      = "nginx-ingress"
-  version    = "1.9.3"
+  version    = "4.6.1"
 
   set {
     name  = "controller.service.type"
