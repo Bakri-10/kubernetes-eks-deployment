@@ -18,5 +18,5 @@ module "eks_cluster" {
   ]
 
   kubeconfig_aws_authenticator_additional_args = "--disable-prompt"
-  kubeconfig_output_path                      = "./kubeconfig.yaml"
+  # kubeconfig_output_path                      = "./kubeconfig.yaml"
 }
