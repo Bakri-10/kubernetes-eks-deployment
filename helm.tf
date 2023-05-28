@@ -19,7 +19,7 @@ resource "helm_release" "nginx_ingress" {
   name       = "nginx-ingress"
   repository = "https://charts.bitnami.com/bitnami"
   chart      = "nginx-ingress"
-  version    = "1.7.1"
+  version    = "1.9.3"
 
   set {
     name  = "controller.service.type"
