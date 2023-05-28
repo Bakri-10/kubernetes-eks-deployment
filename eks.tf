@@ -1,8 +1,3 @@
-module "vpc" {
-  source = "terraform-aws-modules/vpc/aws"
-  # Add necessary configuration for the VPC module
-}
-
 module "eks_cluster" {
   source  = "terraform-aws-modules/eks/aws"
   version = "16.0.0"
