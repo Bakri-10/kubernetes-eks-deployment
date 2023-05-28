@@ -20,3 +20,6 @@ module "eks_cluster" {
 output "cluster_name" {
   value = module.eks_cluster.cluster_id
 }
+output "kubeconfig-certificate-authority-data" {
+  value = module.eks_cluster.cluster_certificate_authority_data
+}
